@@ -2,17 +2,22 @@
 	import 'open-props/style';
 	import 'open-props/normalize';
 	import 'open-props/buttons';
+	import PageTransition from './transition.svelte';
 
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 
 	import '../app.css';
+
+	export let data;
 </script>
 
 <div class="layout">
 	<Header />
 	<main>
-		<slot />
+		<PageTransition url={data.url}>
+			<slot />
+		</PageTransition>
 	</main>
 
 	<Footer />

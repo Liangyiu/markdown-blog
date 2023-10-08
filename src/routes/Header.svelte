@@ -1,9 +1,10 @@
 <script lang="ts">
 	import * as config from '$lib/config';
+	import Toggle from './toggle.svelte';
 </script>
 
 <nav>
-	<a href="" class="title">
+	<a href="/" class="title">
 		<b>{config.title}</b>
 	</a>
 
@@ -19,7 +20,7 @@
 		</li>
 	</ul>
 
-	<button>Toggle</button>
+	<Toggle />
 </nav>
 
 <style>
