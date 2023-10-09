@@ -14,7 +14,7 @@ html {
 	--surface-2-dark: var(--gray-11);
 	--surface-3-dark: var(--gray-10);
 	--surface-4-dark: var(--gray-9);
-	--background-dark: var(--gradient-8);
+	--background-dark: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 	--border-dark: var(--gray-9);
 
 	/* light */
@@ -157,4 +157,9 @@ li {
 	padding: var(--size-3);
 	border-radius: 8px;
 	tab-size: 2;
+}
+
+/* required for the copy code button */
+pre {
+	position: relative;
 }

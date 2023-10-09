@@ -24,16 +24,16 @@
 <style>
 	.posts {
 		display: grid;
+		grid-template-columns: 1fr 1fr;
 		gap: var(--size-7);
 	}
 
 	.post {
 		max-inline-size: var(--size-content-3);
-	}
-
-	.post:not(:last-child) {
-		border-bottom: 1px solid var(--border);
-		padding-bottom: var(--size-7);
+		padding: var(--size-4);
+		box-shadow: var(--shadow-3);
+		border-radius: var(--radius-3);
+		background: var(--surface-3);
 	}
 
 	.title {
@@ -47,5 +47,9 @@
 
 	.description {
 		margin-top: var(--size-3);
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
 	}
 </style>

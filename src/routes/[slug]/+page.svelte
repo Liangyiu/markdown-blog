@@ -30,7 +30,7 @@
 
 <style>
 	article {
-		max-inline-size: var(--size-content-3);
+		max-inline-size: 90ch;
 		margin-inline: auto;
 	}
 
@@ -47,6 +47,7 @@
 		display: flex;
 		gap: var(--size-3);
 		margin-top: var(--size-7);
+		margin-bottom: var(--size-7);
 	}
 
 	.tags a {

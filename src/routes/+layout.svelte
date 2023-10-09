@@ -9,6 +9,21 @@
 	import '../app.css';
 
 	export let data;
+
+	import CopyButton from '../components/CopyButton.svelte';
+	import { afterNavigate } from '$app/navigation';
+
+	afterNavigate(() => {
+		for (const node of document.querySelectorAll('pre > code')) {
+			new CopyButton({
+				target: node,
+				props: {
+					content: node.textContent ?? ''
+					// requires <pre> to have position: relative;
+				}
+			});
+		}
+	});
 </script>
 
 <div class="layout">
