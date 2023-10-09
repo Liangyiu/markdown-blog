@@ -19,7 +19,7 @@
 
 	<div class="tags">
 		{#each data.meta.categories as category}
-			<span class="surface-4">&num;{category} </span>
+			<a href="posts-by-tag/{category}"><span class="surface-4">&num;{category} </span></a>
 		{/each}
 	</div>
 
@@ -49,7 +49,11 @@
 		margin-top: var(--size-7);
 	}
 
-	.tags > * {
+	.tags a {
+		text-decoration: none;
+	}
+
+	.tags span {
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
 	}

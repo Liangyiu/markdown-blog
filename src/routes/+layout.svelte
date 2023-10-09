@@ -2,10 +2,9 @@
 	import 'open-props/style';
 	import 'open-props/normalize';
 	import 'open-props/buttons';
-	import PageTransition from './transition.svelte';
-
-	import Header from './Header.svelte';
-	import Footer from './Footer.svelte';
+	import PageTransition from '../components/Transition.svelte';
+	import Header from '../components/Header.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	import '../app.css';
 

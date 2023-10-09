@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config';
-	import Toggle from './toggle.svelte';
+	import Toggle from './Toggle.svelte';
 </script>
 
 <nav>

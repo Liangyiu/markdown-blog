@@ -1,6 +1,8 @@
 import { json } from '@sveltejs/kit';
 
-async function getPosts() {
+export const prerender = true;
+
+async function getPosts(tag: string) {
 	let posts: Post[] = [];
 
 	const paths = import.meta.glob('/src/posts/*.md', {
@@ -13,8 +15,9 @@ async function getPosts() {
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
+
 			const post = { ...metadata, slug } satisfies Post;
-			post.published && posts.push(post);
+			post.published && metadata.categories.includes(tag) && posts.push(post);
 		}
 	}
 
@@ -25,7 +28,9 @@ async function getPosts() {
 	return posts;
 }
 
-export async function GET() {
-	const posts = await getPosts();
+export async function GET({ params }) {
+	const slug = params.slug;
+
+	const posts = await getPosts(slug);
 	return json(posts);
 }
